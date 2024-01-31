@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -21,8 +22,14 @@ public class Driver {
             BufferedReader br = new BufferedReader(new FileReader(Archv));
             
             String line;
+            ArrayList<Character> operators = new ArrayList<>();
             while ((line = br.readLine()) != null) { 
+
                 operation = line;
+                String [] op = line.split(" ");
+                for (String c : op) {
+                    if (c.equals("+") || c.equals("-")||c.equals("*")||c.equals("/")){
+                        operators.add(c);}}
             }
             br.close();
         } catch (IOException e) {
@@ -34,7 +41,7 @@ public class Driver {
     public static void main(String[] args) {
         Driver driver = new Driver();
         driver.leer();
-
+        
         Scanner input = new Scanner(System.in);
         boolean menu = true;
 
