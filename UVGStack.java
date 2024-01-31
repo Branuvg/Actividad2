@@ -2,9 +2,9 @@ public interface UVGStack<T> {
 
     void push(T x);
 
-    T pop();
+    int pop();
 
-    T top();
+    int top();
 
     boolean isEmpty();
 }
