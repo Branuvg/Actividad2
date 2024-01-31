@@ -24,4 +24,6 @@ public class Stack<T> implements UVGStack<T> {
         throw new UnsupportedOperationException("Unimplemented method 'isEmpty'");
     }
     
+    
+
 }
