@@ -1,6 +1,6 @@
-public class Calculadora {
+public class Calculadora implements CalculadoraPOSFIX {
 
-    public int calculate(char operator, int a, int b){
+    public int calcular(char operator, int a, int b){
         switch (operator) {
             case '+':
                 return add(a, b);
