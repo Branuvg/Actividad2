@@ -5,14 +5,6 @@ public class Stack<T> implements UVGStack<T> {
 
     private ArrayList<T> stack;
 
-
-    public void a(){
-        System.out.println("Stack:");
-            for (T num : stack) {
-                System.out.println(num);
-            }
-    }
-
     public Stack() {
         this.stack = new ArrayList<>();
     }
