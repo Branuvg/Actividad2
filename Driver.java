@@ -59,7 +59,7 @@ public class Driver {
                 switch (op) {
                     case 1:
                         Driver operacion = new Driver();
-                        System.out.println("La operación es: " + operacion.leer());
+                        System.out.println("La operación es: " + operacion.leer(operators));
                         for (int i = 0; i < operators.size(); i++) {
                             
                         }
