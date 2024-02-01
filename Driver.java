@@ -15,21 +15,22 @@ public class Driver {
         this.Archv = new File("datos.txt");
     }
 
-    public String leer() {
+    public String leer(ArrayList<String> operators) {
         String operation = "";
         try {
             // Lector
             BufferedReader br = new BufferedReader(new FileReader(Archv));
             
             String line;
-            ArrayList<Character> operators = new ArrayList<>();
+            
             while ((line = br.readLine()) != null) { 
 
                 operation = line;
                 String [] op = line.split(" ");
                 for (String c : op) {
                     if (c.equals("+") || c.equals("-")||c.equals("*")||c.equals("/")){
-                        operators.add(c);}}
+                        operators.add(c);
+                    }}
             }
             br.close();
         } catch (IOException e) {
@@ -40,7 +41,8 @@ public class Driver {
 
     public static void main(String[] args) {
         Driver driver = new Driver();
-        driver.leer();
+        ArrayList<String> operators = new ArrayList<>();
+        driver.leer(operators);
         
         Scanner input = new Scanner(System.in);
         boolean menu = true;
@@ -58,6 +60,9 @@ public class Driver {
                     case 1:
                         Driver operacion = new Driver();
                         System.out.println("La operación es: " + operacion.leer());
+                        for (int i = 0; i < operators.size(); i++) {
+                            
+                        }
                         //System.out.println("Resultado: " + posfixOperation.postfixOperate());
                         break;
                     case 2:

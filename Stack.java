@@ -1,29 +1,40 @@
+import java.util.ArrayList;
+
+
 public class Stack<T> implements UVGStack<T> {
+
+    private ArrayList<T> stack;
+
+    public Stack() {
+        this.stack = new ArrayList<>();
+    }
 
     @Override
     public void push(T x) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'push'");
+        stack.add(x);
     }
 
     @Override
-    public int pop() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'pop'");
+    public T pop() {
+        if (isEmpty()) {
+            throw new UnsupportedOperationException("El Stack esta vacio");
+        }
+        int i = stack.size();
+        T ret = this.stack.get(i);
+        this.stack.remove(i-1);
+        return ret;
     }
 
     @Override
-    public int top() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'top'");
+    public T top() {
+        if (isEmpty()) {
+            throw new UnsupportedOperationException("El Stack esta vacio");
+        }
+        return stack.get(stack.size()-1);
     }
 
     @Override
     public boolean isEmpty() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'isEmpty'");
+        return stack.isEmpty();
     }
-    
-    
-
 }
