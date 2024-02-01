@@ -1,8 +1,3 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -28,9 +23,6 @@ public class Driver {
                     case 1:
                         Driver operacion = new Driver();
                         System.out.println("La operación es: " +calculadora.leer("datos.txt") );
-                        
-                        
-                        
                         System.out.println("Resultado: " + calculadora.posfix());
                         break;
                     case 2:
@@ -43,8 +35,6 @@ public class Driver {
             } catch (NumberFormatException e) {
                 System.out.println("Debe seleccionar un número");
             }
-        
-        
         }
 
     }
