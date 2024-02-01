@@ -20,7 +20,7 @@ public class Stack<T> implements UVGStack<T> {
             throw new UnsupportedOperationException("El Stack esta vacio");
         }
         int i = stack.size();
-        T ret = this.stack.get(i);
+        T ret = this.stack.get(i-1);
         this.stack.remove(i-1);
         return ret;
     }
@@ -30,11 +30,15 @@ public class Stack<T> implements UVGStack<T> {
         if (isEmpty()) {
             throw new UnsupportedOperationException("El Stack esta vacio");
         }
-        return stack.get(stack.size()-1);
+        return  stack.get(stack.size()-1);
     }
 
     @Override
     public boolean isEmpty() {
         return stack.isEmpty();
+    }
+
+    public int size() {
+        return stack.size();
     }
 }

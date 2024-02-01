@@ -7,43 +7,11 @@ import java.util.Scanner;
 
 
 public class Driver {
-
-    private File Archv;
-
-    // constructor
-    public Driver() {
-        this.Archv = new File("datos.txt");
-    }
-
-    public String leer(ArrayList<String> operators) {
-        String operation = "";
-        try {
-            // Lector
-            BufferedReader br = new BufferedReader(new FileReader(Archv));
-            
-            String line;
-            
-            while ((line = br.readLine()) != null) { 
-
-                operation = line;
-                String [] op = line.split(" ");
-                for (String c : op) {
-                    if (c.equals("+") || c.equals("-")||c.equals("*")||c.equals("/")){
-                        operators.add(c);
-                    }}
-            }
-            br.close();
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
-        return operation;
-    }
-
     public static void main(String[] args) {
         Driver driver = new Driver();
-        ArrayList<String> operators = new ArrayList<>();
-        driver.leer(operators);
-        
+        Calculadora calculadora = new Calculadora();
+        String Archv = "datos.txt";
+
         Scanner input = new Scanner(System.in);
         boolean menu = true;
 
@@ -59,11 +27,11 @@ public class Driver {
                 switch (op) {
                     case 1:
                         Driver operacion = new Driver();
-                        System.out.println("La operación es: " + operacion.leer());
-                        for (int i = 0; i < operators.size(); i++) {
-                            
-                        }
-                        //System.out.println("Resultado: " + posfixOperation.postfixOperate());
+                        System.out.println("La operación es: " +calculadora.leer("datos.txt") );
+                        
+                        
+                        
+                        System.out.println("Resultado: " + calculadora.posfix());
                         break;
                     case 2:
                         menu = false;
