@@ -36,7 +36,7 @@ public class Calculadora implements CalculadoraPOSFIX {
                 for (String c : op) {
                     if (c.equals("+") || c.equals("-")||c.equals("*")||c.equals("/")){
                         operators.add(c.charAt(0));
-
+                        System.out.println(c);
                     }
                     else if (isStringDigit(c)== true ) {
                         this.stack.push(Integer.parseInt(c));
@@ -52,6 +52,7 @@ public class Calculadora implements CalculadoraPOSFIX {
     }
 
     public int posfix(){
+        
         int result = 0;
         for (int i = 0; i < operators.size(); i++) {
             if (stack.size() < 2) {
@@ -59,8 +60,9 @@ public class Calculadora implements CalculadoraPOSFIX {
             }
             int x = stack.pop();
             int y = stack.pop();
-            result =  calcular(operators.get(operators.size()-1),x,y);
-            operators.remove(operators.size()-1);
+            result =  calcular(operators.get(i),x,y);
+            stack.push(result);
+            stack.a();
         }
         return result;
     }
